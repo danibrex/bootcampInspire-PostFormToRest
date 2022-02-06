@@ -4,11 +4,14 @@
 package com.spiralartsPostToRest.controllers;
 
 import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.spiralartsPostToRest.Util.Util;
 import com.spiralartsPostToRest.models.Persona;
+import com.spiralartsPostToRest.services.PersonaServiceI;
 
 /**
  * BANCO DE PRUEBAS:
@@ -38,6 +41,9 @@ import com.spiralartsPostToRest.models.Persona;
 @RestController
 //@EnableWebMvc
 public class FormController {
+	
+	@Autowired
+	private PersonaServiceI personaServiceI;
 	
 	@RequestMapping(
 			value = "/peticion"
@@ -78,6 +84,9 @@ public class FormController {
 			/** Se añade al mapa que contiene personas */
 			Util.addPersonaToMap(md5, persona);
 			
+			/** Se inserta el registro en la BD */
+			personaServiceI.crearPersona(persona);
+			
 			/** Se retornan los datos obtenidos y procesados de forma "amigable" usando etiquetas HTML */
 			//pruebas etiquetas HTML de respuesta
 			return "<h1>Datos Recibidos en el servidor y enviados de vuelta</h1>"
@@ -105,7 +114,7 @@ public class FormController {
 				  + "<hr>"
 				  + "<br>Persona creada, llamada al método toString del objeto: " + persona.toString()
 				  //prueba link de vuelta
-				  + "<br><br><a href ='C:/springboot/com.spiral-arts-PostFormToRest/sendform_to_rest.html'>Volver</a>"
+				  + "<br><br><a href ='file:///C:/springboot/com.spiral-arts-PostFormToRest/sendform_to_rest.html'>Volver</a>"
 				  //prueba respuesta JS
 				  + "<script>"
 				  	+ "document.getElementById('pruebaJS').style.color='red';"

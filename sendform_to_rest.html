@@ -13,60 +13,64 @@
 <p>Los datos serán enviados a esa dirección. Enlace: <span><a href="http://localhost:8094/peticion">URL/peticion en el puerto 8094</a></span></p>
 <h2>Quién eres:</h2>
 <form action="http://localhost:8094/peticion" method="POST" target="_blanck">
+    <fieldset>
+        <legend>Personal</legend>
+        <label for="fid">Id:</label><br>
+        <input type="number" id="fid" name="id" value="" required><br>
 
-	<label for="fid">Id:</label><br>
-	<input type="number" id="fid" name="id" value="" required><br>
+        <label for="fnombre">Nombre:</label><br>
+        <input type="text" id="fnombre" name="nombre" value="" required><br>
 
-	<label for="fnombre">Nombre:</label><br>
-	<input type="text" id="fnombre" name="nombre" value="" required><br>
+        <label for="fapellidos">Apellidos:</label><br>
+        <input type="text" id="fapellidos" name="apellidos" value="" required><br>
 
-	<label for="fapellidos">Apellidos:</label><br>
-	<input type="text" id="fapellidos" name="apellidos" value="" required><br>
+        <label for="email">Introduce tu email:</label><br>
+        <input type="email" id="email" name="email" required><br>
 
-    <label for="email">Introduce tu email:</label><br>
-    <input type="email" id="email" name="email" required><br>
+        <label for="password">Introduce una contraseña:</label><br>
+        <input type="password" id="password" name="password" required><br>
+    </fieldset>
 
-    <label for="password">Introduce una contraseña:</label><br>
-    <input type="password" id="password" name="password" required><br>
+    <fieldset>
+        <legend>Aficiones</legend>
+        <label for="seleccion"><h2>Elige un género cinematográfico o varios (CTRL + clic)</h2></label>
+        <select name="pelis" id="seleccion" multiple required>
+            <option value="Terror">Terror</option>
+            <option value="Intriga">Intriga</option>
+            <option value="Acción">Acción</option>
+            <option value="Bélica">Bélica</option>
+            <option value="Biopic">Biopic</option>
+        </select>
 
-    <label for="seleccion"><h2>Elige un género cinematográfico o varios (CTRL + clic)</h2></label>
-    <select name="pelis" id="seleccion" multiple required>
-        <option value="Terror">Terror</option>
-        <option value="Intriga">Intriga</option>
-        <option value="Acción">Acción</option>
-        <option value="Bélica">Bélica</option>
-        <option value="Biopic">Biopic</option>
-    </select>
+        <br/>
 
-    <br/>
+        <h2>Elige tus aficiones, elige sabiamente.</h2>
 
-    <h2>Elige tus aficiones, elige sabiamente.</h2>
+        <input type="checkbox" id="aficion1" name ="aficiones" value="Natación">
+        <label for="aficion">Me gusta la natación</label>
 
-    <input type="checkbox" id="aficion1" name ="aficiones" value="Natación">
-    <label for="aficion">Me gusta la natación</label>
+        <input type="checkbox" id="aficion2" name="aficiones" value="Esgrima">
+        <label for="aficion2">Esgrima</label>
 
-    <input type="checkbox" id="aficion2" name="aficiones" value="Esgrima">
-    <label for="aficion2">Esgrima</label>
+        <input type="checkbox" id="aficion3" name="aficiones" value="Ver el atardecer">
+        <label for="aficion3">Ver el atardecer</label>
 
-    <input type="checkbox" id="aficion3" name="aficiones" value="Ver el atardecer">
-    <label for="aficion3">Ver el atardecer</label>
+        <br/>
 
-    <br/>
+        <h2>Estilos musicales datalist option value</h2>
+        <input list="musicas" name="musica" required>
+        <datalist id="musicas">
+            <option value="Rock">
+            <option value="Urbano">
+            <option value="Alternativo">
+            <option value="Electrónica">
+            <option value="Chill">
+        </datalist>
+        <br/><br/>
 
-    <h2>Estilos musicales datalist option value</h2>
-    <input list="musicas" name="musica" required>
-    <datalist id="musicas">
-        <option value="Rock">
-        <option value="Urbano">
-        <option value="Alternativo">
-        <option value="Electrónica">
-        <option value="Chill">
-    </datalist>
-    <br/><br/>
-
-    <input type="submit" value="Enviar" id="btnCrear" >
-	<input type="reset" value="Limpiar el formulario" id="btnLimpiar">
-
+        <input type="submit" value="Enviar" id="btnCrear" >
+        <input type="reset" value="Limpiar el formulario" id="btnLimpiar">
+        </fieldset>
   </form> 
   <br/>
 

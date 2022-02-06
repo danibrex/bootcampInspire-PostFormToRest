@@ -13,7 +13,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: ''
-    url: jdbc:mysql:/testjpa
+    url: jdbc:mysql:/spring_boot_data_persona_test
     username: root
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect

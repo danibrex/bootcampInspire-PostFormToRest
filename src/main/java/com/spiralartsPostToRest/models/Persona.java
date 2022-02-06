@@ -6,10 +6,19 @@ package com.spiralartsPostToRest.models;
 import java.io.Serializable;
 import java.util.Arrays;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Daniel
  *
  */
+@Entity
+@Table(name="persona")
 public class Persona implements Serializable{
 
 	/**
@@ -17,6 +26,8 @@ public class Persona implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nombre;
 	private String apellidos;
@@ -25,19 +36,18 @@ public class Persona implements Serializable{
 	private String[] pelis;
 	private String[] aficiones;
 	private String[] musica;
+	
+	
+
+	
 	/**
-	 * @param id
-	 * @param nombre
-	 * @param apellidos
+	 * 
 	 */
-	public Persona(Long id, String nombre, String apellidos) {
+	public Persona() {
 		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
 	}
-	
-	
+
+
 	/**
 	 * @param id
 	 * @param nombre
@@ -81,6 +91,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the nombre
 	 */
+	@Column(name="nombre")
 	public String getNombre() {
 		return nombre;
 	}
@@ -97,6 +108,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the apellidos
 	 */
+	@Column(name="apellidos")
 	public String getApellidos() {
 		return apellidos;
 	}
@@ -113,6 +125,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the email
 	 */
+	@Column(name="email")
 	public String getEmail() {
 		return email;
 	}
@@ -129,6 +142,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the password
 	 */
+	@Column(name="password")
 	public String getPassword() {
 		return password;
 	}
@@ -145,6 +159,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the pelis
 	 */
+	@Column(name="pelis")
 	public String[] getPelis() {
 		return pelis;
 	}
@@ -161,6 +176,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the aficiones
 	 */
+	@Column(name="aficiones")
 	public String[] getAficiones() {
 		return aficiones;
 	}
@@ -177,6 +193,7 @@ public class Persona implements Serializable{
 	/**
 	 * @return the musica
 	 */
+	@Column(name="musica")
 	public String[] getMusica() {
 		return musica;
 	}
