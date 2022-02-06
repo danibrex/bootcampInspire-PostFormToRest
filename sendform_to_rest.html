@@ -11,6 +11,8 @@
 
 <h2>El ejercicio consiste en hacer llegar datos vía POST al método RestController java anotado como @PostMapping (al final @RequestMapping).</h2>
 <p>Los datos serán enviados a esa dirección. Enlace: <span><a href="http://localhost:8094/peticion">URL/peticion en el puerto 8094</a></span></p>
+<p>Los datos recibidos en el servidor serán insertados en una tabla llamada persona, en una base de datos llamada "spring_boot_data_persona_test".</p>
+<p>El volcado de la tabla puede verse aquí en formato Json: <span><a href="http://localhost:8094/listar">Enlace</a></span></p>
 <h2>Quién eres:</h2>
 <form action="http://localhost:8094/peticion" method="POST" target="_blanck">
     <fieldset>

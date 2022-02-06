@@ -4,13 +4,16 @@
 package com.spiralartsPostToRest.controllers;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.spiralartsPostToRest.Util.Util;
 import com.spiralartsPostToRest.models.Persona;
+import com.spiralartsPostToRest.repository.PersonaRepositoryI;
 import com.spiralartsPostToRest.services.PersonaServiceI;
 
 /**
@@ -111,6 +114,7 @@ public class FormController {
 				  + "<hr>"
 				  //prueba tamaño del mapa Personas
 				  + "<br>Tamaño del mapa que contiene personas: " + Util.getPersonaMap().size()
+				  + "<br>Cantidad de registros en la BD: " + personaServiceI.numeroPersonas()				  
 				  + "<hr>"
 				  + "<br>Persona creada, llamada al método toString del objeto: " + persona.toString()
 				  //prueba link de vuelta
@@ -122,7 +126,15 @@ public class FormController {
 				  + "</script>";
 		
 	}
-	
+	/**
+	 * Retorna el contenido de la tabla persona en una lista de tipo Persona
+	 * 
+	 * @return
+	 */
+	@GetMapping("/listar")
+	public List<Persona> listarPersonas(){
+		return personaServiceI.listarPersonas();
+	}
 	
 
 }
